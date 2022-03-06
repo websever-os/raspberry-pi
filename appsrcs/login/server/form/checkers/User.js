@@ -6,20 +6,15 @@ module.exports = function User(web){
         const app = session.app
         return new Promise(async function(resolve, reject){
             const id = session.user.id
-            const etcDir = '/etc/ws-os'
-            const userDir = path.join(etcDir,id)
-            const jsonsDir = path.join(userDir,'jsons')
+            const confDir = path.join('/home',id,'.ws-os')
+            const jsonsDir = path.join(confDir,'jsons')
             const userIconsJSON = path.join(jsonsDir,'icons.json')
             const userThememsJSON = path.join(jsonsDir,'themes.json')
             const defaultIconsJSON = path.join(web.sys.path.ofAppsrcs,'gui','rules','jsons','icons.json')
             const defaultThememsJSON = path.join(web.sys.path.ofAppsrcs,'gui','rules','jsons','themes.json')
             let flag = false
-            if(!web.sys.checks.path(etcDir))
-                flag = web.sys.tools.datum.toMake.directory(etcDir)
-            else flag = true
-
-            if(flag && !web.sys.checks.path(userDir))
-                flag = web.sys.tools.datum.toMake.directory(userDir)
+            if(!web.sys.checks.path(confDir))
+                flag = web.sys.tools.datum.toMake.directory(confDir)
             else flag = true
 
             if(flag && !web.sys.checks.path(jsonsDir))
