@@ -39,19 +39,22 @@ module.exports = function Operator(web){
 				dstPath = path.resolve(path.join(dst,item))
 			}
 			if(srcPath != null && dstPath != null){
-				fs.copySync(srcPath,dstPath)
-				var state = fs.lstatSync(dstPath)
-				if(!state.isDirectory())
-					type = mime.lookup(dstPath)
-				else
-					type = 'directory'
-				copiedList.push([item,state.mtimeMs,type,state.size])
+				fs.copyFile(srcPath,dstPath,function(err){
+					if (err) throw err;
+					var state = fs.lstatSync(dstPath)
+					if(!state.isDirectory())
+						type = mime.lookup(dstPath)
+					else
+						type = 'directory'
+					copiedList.push([item,state.mtimeMs,type,state.size])
+					if(copiedList.length != 0){
+						session.app.data.info = {path:dst,list:copiedList}
+						session.app.filebrowser.self.executes.copy.onClient(session)
+						copiedList.pop()
+					}
+				})
 			}
 		})
-		if(copiedList.length != 0){
-			session.app.data.info = {path:dst,list:copiedList}
-			session.app.filebrowser.self.executes.copy.onClient(session)
-		}
 	}
 	this.cut = function(session){
 		if(isFiltered(session)){
@@ -71,22 +74,26 @@ module.exports = function Operator(web){
 					dstPath = path.resolve(path.join(dst,dstItem))
 				}
 				if(srcPath != null && dstPath != null && srcPath != uDir){
-					fs.moveSync(srcPath,dstPath)
-					var state = fs.lstatSync(dstPath)
-					if(!state.isDirectory())
-						type = mime.lookup(dstPath)
-					else
-						type = 'directory'
-					srcList.push(srcItem)
-					dstList.push([dstItem,state.mtimeMs,type,state.size])
+					fs.move(srcPath,dstPath,function(err){
+						if (err) return console.log(err)
+						var state = fs.lstatSync(dstPath)
+						if(!state.isDirectory())
+							type = mime.lookup(dstPath)
+						else
+							type = 'directory'
+						srcList.push(srcItem)
+						dstList.push([dstItem,state.mtimeMs,type,state.size])
+						if(dstList.length != 0){
+							session.app.data.info = {mode:'dst',path:dst,list:dstList}
+							session.app.filebrowser.self.executes.cut.onClient(session)
+							session.app.data.info = {mode:'src',path:src,list:srcList}
+							session.app.filebrowser.self.executes.cut.onClient(session)
+							srcList.pop()
+							dstList.pop()
+						}
+					})
 				}
 			})
-			if(dstList.length != 0){
-				session.app.data.info = {mode:'dst',path:dst,list:dstList}
-				session.app.filebrowser.self.executes.cut.onClient(session)
-				session.app.data.info = {mode:'src',path:src,list:srcList}
-				session.app.filebrowser.self.executes.cut.onClient(session)
-			}
 		}
 	}
 	this.delete = function(session){
