@@ -5,7 +5,7 @@ module.exports = function Update(web){
         const app = session.app
         let id = session.user.id
         
-        let jPath = path.join('/etc/ws-os',id,'jsons','icons.json')
+        let jPath = path.join('/home',id,'.ws-os','jsons','icons.json')
         if(web.sys.checks.path(jPath)){
             let json = editJsonFile(jPath)
             let info = app.data.info
