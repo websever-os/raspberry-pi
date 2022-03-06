@@ -4,7 +4,7 @@ web.app.filebrowser.src.self.operators.Operator = function(web){
     var info = null
     var event = null
     const init = function(evt){
-        if(event === undefined || event == null)
+        if(evt === undefined || evt == null)
             event = web.app.filebrowser.event
         else event = evt
         let tagName = $(event.target).prop('tagName')
@@ -30,14 +30,14 @@ web.app.filebrowser.src.self.operators.Operator = function(web){
     this.copy = function(){
         $('.contextmenu').remove()
         init()
-        info = {mode:'copy',src:path,list:selectedData}
+        if(isFiltered)
+            info = {mode:'copy',src:path,list:selectedData}
     }
     this.cut = function(){
         $('.contextmenu').remove()
         init()
         if(isFiltered())
             info = {mode:'cut',src:path,list:selectedData}
-        console.log(info)
     }
     this.paste = function(){
         $('.contextmenu').remove()
