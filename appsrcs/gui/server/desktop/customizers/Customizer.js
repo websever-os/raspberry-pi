@@ -18,7 +18,7 @@ module.exports = function Customizer(web){
         if(web.sys.checks.url.forCustom.css(app[app.name].viewsJSON.desktop.css[0],session)){
             if(session.user != null){
                 let id = session.user.id
-                let jPath = path.join(path.sep+'etc','ws-os',id,'jsons','themes.json')
+                let jPath = path.join('/home',id,'.ws-os','jsons','themes.json')
                 if(web.sys.checks.path(jPath)){
                     let json = editJSONFile(jPath)
                     app.file.text = app.file.text.replaceAll('/* barPaddingWidth */',json.data.bar.padding['width'])
