@@ -7,4 +7,4 @@ node-authenticate-pam:   apt-get install libpam0g-dev
 node server
 
 
-*Config files in /etc/ws-os
+*Config files in /home/${user}/.ws-os
