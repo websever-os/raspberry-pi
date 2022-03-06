@@ -3,9 +3,10 @@ web.app.filebrowser.src.self.operators.Operator = function(web){
     var path = null
     var info = null
     var event = null
-    const init = function(event){
-        if(event === undefined)
+    const init = function(evt){
+        if(event === undefined || event == null)
             event = web.app.filebrowser.event
+        else event = evt
         let tagName = $(event.target).prop('tagName')
         if(event.type == 'drop'){
             if(tagName == 'TD')
