@@ -1,0 +1,9 @@
+Form = web.app.login.src.form.Form
+Controller = web.app.login.src.form.controllers.Controller
+Mouse = web.app.login.src.form.controllers.mouses.Mouse
+Single = web.app.login.src.form.controllers.mouses.Single
+Key = web.app.login.src.form.controllers.keys.Key
+Enter = web.app.login.src.form.controllers.keys.Enter
+Event = web.app.login.src.form.events.Event
+Executor = web.app.login.src.form.executors.Executor
+Operator = web.app.login.src.form.operators.Operator

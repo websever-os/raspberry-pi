@@ -1,0 +1,487 @@
+body{
+    margin: 0;
+    overflow: hidden;
+	font-family: Arial;
+	user-select: none;
+}
+#background{
+	position:absolute;
+	top:/* taskbarWidth */px;
+	width:100%;
+	height: calc(100% - /* taskbarWidth */px);
+	background-color: /* backgroundBackground-color */;
+}
+#taskbar{
+	display: inline-block;
+    position:absolute;
+	top:0px;
+    z-index:2147483644;
+	background-color:/* taskbarBackground-color */;
+	height:/* taskbarWidth */px;
+	width:100%;
+}
+#menubar{
+	position:absolute;
+}
+#menubar img:hover{
+	opacity:0.4;
+}
+#menubar img{
+	height:/* taskbarWidth */px;
+}
+#msg{
+	position:absolute;
+	right:0;
+}
+#msg img:hover{
+	opacity:0.4;
+}
+#msg img{
+	height:/* taskbarWidth */px;
+}
+#icontable{
+	border-collapse:collapse;
+	border: none;
+}
+#icontable div.cell{
+	margin:0;
+    width: /* iconCellWidth */px;
+    height: /* iconCellHeight */px;
+	border-top: /* icontableBorderWidth */px solid transparent;
+	border-left: /* icontableBorderWidth */px solid transparent;
+}
+.icon:hover{
+	background-color:/* iconHoverBackground-color */;
+	opacity: /* iconHoverOpacity */;
+}
+div.icon{
+	position:relative;
+	width: /* iconCellWidth */px;
+    height: /* iconCellHeight */px;
+}
+div.icon img{
+	position:absolute;
+	width: /* iconCellWidth */px;
+    height: /* iconCellHeight */px;
+}
+div.icon div.title{
+	color:/* iconTitleColor */;
+	float: left;
+	text-align:center;
+	font-size:/* iconTitleFont-size */px;
+	width: /* iconCellWidth */px;
+	position:absolute;
+	top:calc(/* iconCellHeight */px - /* iconTitleFont-size */px);
+	white-space: pre-line;
+}
+
+.win-outer{
+    background-color: white;
+    width: /* windowOuterWidth */px;
+	min-width: /* windowOuterMin-width */px;
+    height: /* windowOuterHeight */px;
+	min-height: /* windowOuterMin-height */px;
+    position: absolute;
+    border: /* windowOuterBorderWidth */px solid /* windowOuterBorderColor */;
+}
+.enum{
+	left: /* windowOuterLeft */px;
+    top: /* windowOuterTop */px;
+}
+.win-head{
+    background-color: /* windowHeadBackground-color */;
+    height: /* windowHeadHeight */px;
+    width: /* windowOuterWidth */px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+.win-body{
+	overflow:hidden;
+    background-color: white;
+    height: calc(/* windowOuterHeight */px - /* windowHeadHeight */px);
+	width: /* windowOuterWidth */px;
+}
+.win-body iframe{
+	width:100%;
+	height:100%;
+}
+.win-move{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: transparent;
+    width: calc(/* windowOuterHeight */px - (/* windowButtonImgWidth */px * 3) - (/* windowButtonImgPaddingWidth */px * 6) - (/* windowButtonBorderWidth */px * 3));
+    height: /* windowHeadHeight */px;
+    display: inline-block;
+}
+.win-title{
+	position: absolute;
+	top:15%;
+	margin-left:15px;
+}
+.win-button{
+    user-select: none;
+    text-align: center;
+    float: right;
+	border-left: /* windowButtonBorderWidth */px solid /* windowButtonBorderColor */;
+    background-color: /* windowButtonBackground-color */;
+	width:/* windowButtonWidth */px;
+	height:/* windowButtonHeight */px;
+}
+.win-button img{
+	padding: /* windowButtonImgPaddingWidth */px;
+    width: /* windowButtonImgWidth */px;
+    height: /* windowButtonImgHeight */px;
+}
+.win-button:hover{
+    background-color: /* windowButtonHoverBackground-color */;
+    cursor: default;
+}
+.win-edge{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+}
+.win-nw-resize{
+    top: -15px;
+    left: -15px;
+    cursor: nw-resize;
+}
+.win-ne-resize{
+    top: -15px;
+    right: -15px;
+    cursor: ne-resize;
+}
+.win-sw-resize{
+    bottom: -15px;
+    left: -15px;
+    cursor: sw-resize;
+}
+.win-se-resize{
+    bottom: -15px;
+    right: -15px;
+    cursor: se-resize;
+}
+.win-n-resize{
+    top:-15px;
+    left:10px;
+    cursor: n-resize;
+}
+.win-s-resize{
+    bottom:-15px;
+    left:10px;
+    cursor: s-resize;
+}
+.win-w-resize{
+    top:10px;
+    left:-15px;
+    cursor: w-resize;
+}
+.win-e-resize{
+    top:10px;
+    right:-15px;
+    cursor: e-resize;
+}
+.win-row-side{
+    position: absolute;
+    width: calc(/* windowOuterWidth */px - 20px);
+    height: 20px;
+}
+.win-col-side{
+    position: absolute;
+    width: 20px;
+    height: calc(/* windowOuterHeight */px - 20px);
+}
+#barzone{
+	display: inline-flex;
+	position:absolute;
+	right:/* taskbarWidth */px;
+	width: calc(100% - /* taskbarWidth */px - /* taskbarWidth */px);
+	height: /* taskbarWidth */px;
+}
+.bar{
+	width: calc(/* taskbarWidth */px - (/* barPaddingWidth */ * 2)px);
+	height: calc(/* taskbarWidth */px - (/* barPaddingWidth */ * 2)px);
+	padding:/* barPaddingWidth */px;
+}
+.bar img{
+	width: calc(/* taskbarWidth */px - 6px);
+	height: calc(/* taskbarWidth */px - 6px);
+}
+.bar:hover{
+    opacity:0.7;
+}
+
+/*
+
+
+
+#menubar_context{
+	position:absolute;
+	background-color:gray;
+	z-index:2147483646;
+	padding:10px;
+	line-height:25px;
+}
+#menubar_context .menu{
+	padding-left:5px;
+	padding-right:5px
+}
+#menubar_context .menu:hover{
+	background-color:lightGray;
+}
+
+.win-outer{
+    background-color: white;
+    width: $(dbs[desktop].Window_theme_V.outer_width)px;
+	min-width: $(dbs[desktop].Window_theme_V.outer_min_width)px;
+    height: $(dbs[desktop].Window_theme_V.outer_height)px;
+	min-height: $(dbs[desktop].Window_theme_V.outer_min_height)px;
+    position: absolute;
+    border-width: $(dbs[desktop].Window_theme_V.outer_border_width)px;
+    border-style: solid;
+    border-color: $(dbs[desktop].Window_theme_V.outer_border_color);
+}
+.enum{
+	left: $(dbs[desktop].Window_theme_V.outer_left)px;
+    top: $(dbs[desktop].Window_theme_V.outer_top)px;
+}
+.win-head{
+    background-color: $(dbs[desktop].Window_theme_V.head_background_color);
+    height: $(dbs[desktop].Window_theme_V.head_height)px;
+    width: $(dbs[desktop].Window_theme_V.outer_width)px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+.win-body{
+	overflow:scroll;
+    background-color: white;
+    height: calc($(dbs[desktop].Window_theme_V.outer_height)px - $(dbs[desktop].Window_theme_V.head_height)px);
+	width: $(dbs[desktop].Window_theme_V.outer_width)px;
+	overflow-x: hidden;
+}
+.win-move{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: transparent;
+    width: calc($(dbs[desktop].Window_theme_V.outer_width)px - ($(dbs[desktop].Window_theme_V.button_img_width)px * 3) - ($(dbs[desktop].Window_theme_V.button_img_padding)px * 6));
+    height: $(dbs[desktop].Window_theme_V.head_height)px;
+    display: inline-block;
+}
+.win-button{
+    user-select: none;
+    text-align: center;
+    float: right;
+	border-left: $(dbs[desktop].Window_theme_V.button_border_width)px solid $(dbs[desktop].Window_theme_V.button_border_color);
+    background-color: $(dbs[desktop].Window_theme_V.button_background_color);
+}
+.win-button img{
+	padding: $(dbs[desktop].Window_theme_V.button_img_padding)px;
+    width: $(dbs[desktop].Window_theme_V.button_img_width)px;
+    height: $(dbs[desktop].Window_theme_V.button_img_height)px;
+}
+.win-button:hover{
+    background-color: $(dbs[desktop].Window_theme_V.button_hover_color);
+    cursor: default;
+}
+.win-edge{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+	background-color:yellow;
+	opacity: 0.2;
+}
+.win-nw-resize{
+    top: -15px;
+    left: -15px;
+    cursor: nw-resize;
+}
+.win-ne-resize{
+    top: -15px;
+    right: -15px;
+    cursor: ne-resize;
+}
+.win-sw-resize{
+    bottom: -15px;
+    left: -15px;
+    cursor: sw-resize;
+}
+.win-se-resize{
+    bottom: -15px;
+    right: -15px;
+    cursor: se-resize;
+}
+.win-n-resize{
+    top:-15px;
+    left:10px;
+    cursor: n-resize;
+}
+.win-s-resize{
+    bottom:-15px;
+    left:10px;
+    cursor: s-resize;
+}
+.win-w-resize{
+    top:10px;
+    left:-15px;
+    cursor: w-resize;
+}
+.win-e-resize{
+    top:10px;
+    right:-15px;
+    cursor: w-resize;
+}
+.win-row-side{
+    position: absolute;
+    width: calc($(dbs[desktop].Window_theme_V.outer_width)px - 20px);
+    height: 20px;
+	background-color:green;
+	opacity: 0.2;
+}
+.win-col-side{
+    position: absolute;
+    width: 20px;
+    height: calc($(dbs[desktop].Window_theme_V.outer_height)px - 20px);
+	background-color:green;
+	opacity: 0.2;
+}
+.rubberband{
+	background-color:blue;
+	opacity:0.3;
+	border:1px solid black;
+}
+.selected{
+	background-color:gray;
+}
+
+.dataIcon:hover{
+	background-color:LightGray;
+}
+.dataIcon{
+	position:relative;
+	left:0;
+	top:0;
+	font-size:12px;
+	width: $(dbs[desktop].Icon_theme_V.width)px;
+    height: $(dbs[desktop].Icon_theme_V.height)px;
+}
+.dataIcon .name{
+	float: left;
+	text-align:center;
+	width: $(dbs[desktop].Icon_theme_V.width)px;
+	position:absolute;
+	top:calc($(dbs[desktop].Icon_theme_V.height)px - 12px);
+	white-space: pre-line;
+}
+.dataIcon .type{
+	text-align:center;
+	width: $(dbs[desktop].Icon_theme_V.width)px;
+	position:absolute;
+	top:calc($(dbs[desktop].Icon_theme_V.height)px / 4);
+}
+.dataIcon .type.temp{
+	color:red;
+}
+.desktop.contextmenu{
+	position:absolute;
+	z-index:2147483646;
+	width:150px;
+	background-color:gray;
+}
+.desktop.contextmenu div{
+	padding: 5px;
+}
+.desktop.contextmenu div:hover{
+	background-color:lightGray;
+}
+.notice{
+	position:absolute;
+	font-size:40px;
+	bottom:0;
+	color:white;
+	z-index:2147483647;
+}
+.win-notice{
+	position:absolute;
+	bottom:0;
+	z-index:2147483647;
+}
+.noticeTable, .noticeTable td{
+	font-size:18px;
+	border:1px solid lightGray;
+	border-collapse:collapse;
+	width:100%; 
+	height:30px;
+	font-weight:bold;
+}
+#downloadbar{
+	white-space:nowrap;
+	position:absolute;
+	max-height:$(dbs[desktop].Taskbar_theme_V.range)px;
+	z-index:2147483647;
+}
+#downloadbar .name{
+	position:absolute;
+	display:inline-block;
+	height:$(dbs[desktop].Taskbar_theme_V.range)px;
+	line-height:$(dbs[desktop].Taskbar_theme_V.range)px;
+}
+#downloadbar .percent{
+	position:relative;
+	display:inline-block;
+	background-color:#00ff00;
+	height:$(dbs[desktop].Taskbar_theme_V.range)px;
+}
+#footer .status{
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:25px;
+	display: flex;
+	z-index:2147483647;
+}
+#footer .status div{
+	display:inline-block;
+	margin:0;
+    padding:0;
+	vertical-align:top;
+}
+#footer .status .title{
+	white-space:nowrap;
+}
+#footer .status .name{
+	white-space:nowrap;
+}
+#footer .status .info{
+	background-color:#00ff00;
+}
+
+#msgWindow{
+	z-index:2147483646;
+}
+#msgWindow table{
+	width:383px;
+}
+#msgWindow tr:nth-child(even){
+	height:20px;
+	background-color:lightGray;
+}
+#msgWindow .msg{
+	width:100%;
+}
+#msgWindow .msg-x{
+	position:absolute;
+	right:20px;
+}
+#msgWindow .msg-x>img{
+	width:15px;
+	right:15px;
+}
+#msgWindow .time{
+	position:absolute;
+	right:35px;
+}
+*/

@@ -1,0 +1,17 @@
+{
+  "list": {
+    "0": {
+      "row": 0,
+      "cell": 0,
+      "sort": "apps",
+      "id": 0
+    }
+  },
+  "apps": {
+    "0": {
+      "title": "Filebrowser",
+      "path": "filebrowser"
+    }
+  },
+  "data": {}
+}

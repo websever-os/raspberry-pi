@@ -1,0 +1,10 @@
+web.app.login = {}
+web.app.login.src = {}
+web.app.login.src = {}
+web.app.login.src.form = {}
+web.app.login.src.form.controllers = {}
+web.app.login.src.form.controllers.mouses = {}
+web.app.login.src.form.controllers.keys = {}
+web.app.login.src.form.executors = {}
+web.app.login.src.form.events = {}
+web.app.login.src.form.operators = {}

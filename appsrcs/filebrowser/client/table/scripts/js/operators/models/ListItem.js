@@ -1,0 +1,35 @@
+web.app.filebrowser.src.table.operators.models.ListItem = function(item){
+    let tr = $('<tr></tr>')
+    tr.addClass("row")
+	tr.addClass("data")
+    if(item[2] == "directory") tr.addClass("directory")
+	tr.attr("draggable","true")
+
+    let td = $('<td></td>')
+    let input = $('<input></input>')
+    input.attr('type','checkbox')
+    td.append(input)
+    tr.append(td)
+    td = $('<td></td>')
+    td.html(item[0])
+    td.addClass("name")
+    td.attr("contenteditable",false)
+    tr.append(td)
+    td = $('<td></td>')
+    if(item[1] != null){
+        item[1] = new Date(item[1])
+        item[1] = item[1].getFullYear()+'-'+item[1].getMonth()+'-'+item[1].getDate()+' '+item[1].getHours()+':'+item[1].getMinutes()+':'+item[1].getSeconds()
+    }
+    td.html(item[1])
+    td.addClass("date")
+    tr.append(td)
+    td = $('<td></td>')
+    td.html(item[2])
+    td.addClass("type")
+    tr.append(td)
+    td = $('<td></td>')
+    td.html(item[3])
+    td.addClass("size")
+    tr.append(td)
+    return tr
+}

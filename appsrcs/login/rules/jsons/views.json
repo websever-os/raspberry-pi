@@ -1,0 +1,31 @@
+{
+    "default":"form",
+    "form":{
+        "frame":"form/templates/frames/frame",
+        "title":"Login",
+        "js":[
+            "App",
+            "package",
+            "form/scripts/js/Form",
+            "form/scripts/js/controllers/Controller",
+            "form/scripts/js/controllers/mouses/Mouse",
+            "form/scripts/js/controllers/mouses/Single",
+            "form/scripts/js/controllers/keys/Key",
+            "form/scripts/js/controllers/keys/Enter",
+            "form/scripts/js/executors/Executor",
+            "form/scripts/js/events/Event",
+            "form/scripts/js/operators/Operator",
+            "import",
+            "operate",
+            "delete"
+        ],
+        "css":[
+            "form/scripts/css/login"
+        ],
+        "headers":[],
+        "sections":[
+            "form/templates/bodies/sections/form"
+        ],
+        "footers":[]
+    }
+}

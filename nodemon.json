@@ -1,0 +1,13 @@
+{
+    "verbose": true,
+    "ignore": [
+      ".git",
+      "node_modules",
+      "*.marko.js"
+    ],
+    "watch": [
+      "**/*"
+    ],
+    "pollingInterval": 100,
+    "legacyWatch": true
+  }

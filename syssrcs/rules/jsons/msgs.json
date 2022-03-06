@@ -1,0 +1,31 @@
+{
+    "en":{
+        "401":{
+            "0":"401 Unauthorized"
+        },
+        "404":{
+            "0":"The app does not exists.",
+            "1":"'/rules/jsons/views.json' in the app does not exists.",
+            "2":"The app does not have a default view.",
+            "3":"Server Error",
+            "4":"HTML for the frame in the app does not exists.",
+            "5":" does not exists.",
+            "6":"/server/App.js in App does not exists.",
+            "7":"Not found static file"
+        },
+        "500":{
+            "0":"Internal Server Error"
+        }
+    },
+    "ko":{
+        "401":{
+            "0":"401 권한 없음"
+        },
+        "404":{
+            "0":"앱이 존재하지 않습니다.",
+            "1":"앱 안에 '/client/scripts/js/jsons/views.json'가 존재하지 않습니다.",
+            "2":"앱의 default view가 없습니다.",
+            "3":"정확한 앱의 이름을 입력하세요."
+        }
+    }
+}

@@ -1,0 +1,1 @@
+web.app.login = new App(web)

@@ -1,0 +1,31 @@
+const path = require('path')
+
+module.exports = function System(web){
+    let Checker = require('./server/checkers/Checker')
+    let Customizer = require('./server/customizers/Customizer')
+    let Downloader = require('./server/downloaders/Downloader')
+    let Establisher = require('./server/establishers/Establish')
+    let Executor = require('./server/executors/Executor')
+    let Loader = require('./server/loaders/Loader')
+    let Paver = require('./server/pavers/Paver')
+    let Reader = require('./server/readers/Reader')
+    let Tooler = require('./server/toolers/Tooler')
+    let Uploader = require('./server/uploaders/Uploader')
+    let Writer = require('./server/writers/Writer')
+    this.checks = new Checker(web)
+    this.customizes = new Customizer(web)
+    this.downloads = new Downloader(web)
+    this.establishes = new Establisher(web)
+    this.executes = new Executor(web)
+    this.lang = null
+    this.loads = new Loader(web)
+    this.paves = new Paver(web)
+    this.path = null
+    this.reads = new Reader(web)
+    this.tools = new Tooler(web)
+    this.uploads = new Uploader(web)
+    this.views = null
+    this.variables = null
+    this.writes = new Writer(web)
+    this.wss = null
+}

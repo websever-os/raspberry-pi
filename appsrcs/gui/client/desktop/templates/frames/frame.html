@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+		<link rel="icon" type="image/x-icon" href="/gui/client/desktop/media/images/favicon.ico" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		{{ js }}
+		{{ css }}
+		<title>{{ title }}</title>
+	</head>
+	<body 
+		onload="web.app.gui.desktop.executes.user.check()"
+		onresize="web.app.gui.desktop.executes.init.view()"
+	>
+		<header>
+			{{ headers }}
+		</header>
+		<section>
+			{{ sections }}
+		</section>
+		<footer>
+			{{ footers }}
+		</footer>
+	</body>
+</html>

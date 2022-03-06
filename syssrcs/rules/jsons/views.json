@@ -1,0 +1,32 @@
+{
+    "default":"syssrcs",
+    "syssrcs":{
+        "frame":"frame",
+        "title":"System",
+        "js":[
+            "System",
+            "package",
+            "scripts/js/adjustors/Adjustor",
+            "scripts/js/adjustors/effects/Effect",
+            "scripts/js/adjustors/effects/Process",
+            "scripts/js/establishers/Establisher",
+            "scripts/js/establishers/Session",
+            "scripts/js/establishers/models/Session?custom",
+            "scripts/js/executors/Executor",
+            "scripts/js/protocols/Protocol",
+            "scripts/js/protocols/layers/applications/Websocket",
+            "scripts/js/protocols/managers/Manager",
+            "scripts/js/protocols/managers/Websocket",
+            "scripts/js/protocols/managers/Send",
+            "scripts/js/protocols/models/Data?custom",
+            "import",
+            "operate",
+            "delete"
+        ],
+        "css":[],
+        "headers":[],
+        "sections":[],
+        "footers":[]
+    },
+    "unspecific_icon":"syssrcs/client/media/images/unspecific_icon.png"
+}

@@ -1,0 +1,11 @@
+delete Adjustor
+delete Effect
+delete Process
+delete Establisher
+delete SessionEstablisher
+delete Session
+delete Executor
+delete Protocol
+delete ProtocolManager
+delete WebsocketManager
+delete Send

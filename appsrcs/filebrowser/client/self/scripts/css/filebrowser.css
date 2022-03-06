@@ -1,0 +1,86 @@
+div.filebrowser{
+	width:100%;
+	height:100%;
+	overflow: scroll;
+}
+.filetable{
+	position:relative;
+	cursor:default;
+	width:90%;
+	border-collapse:collapse;
+}
+.filetable tr{
+	border-bottom:1px solid #BBBBBB;
+	line-height:180%;
+}
+.filetable .type.temp{
+	color:red;
+}
+.filetable .row:hover td{
+	background-color:#00ffff;
+	opacity:0.3;
+}
+.filetable>thead>tr:not(:first-child)>th:first-child{
+	width:30px;
+}
+.filetable>tbody>tr>td:not(:nth-child(2)){
+	text-align:center;
+}
+.filetable>tbody>tr>td:nth-child(1){
+	width:20px;
+}
+.filetable .path{
+	text-align:left;
+}
+.filetable .parent{
+	font-weight:bold;
+}
+.filetable .directory{
+	color:#ffcc00;
+}
+.filetable .selected{
+	background-color:#0086b3;
+}
+.filebrowser.contextmenu{
+	position:absolute;
+	z-index:2147483646;
+	background-color:gray;
+	width: -moz-fit-content;
+  	width: fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	overflow: hidden;
+}
+.filebrowser.contextmenu div{
+	padding: 5px;
+}
+.filebrowser.contextmenu div:hover{
+	background-color:lightGray;
+}
+.filebrowser .status{
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:25px;
+	display: flex;
+}
+.filebrowser .status div{
+	display:inline-block;
+	margin:0;
+    padding:0;
+	vertical-align:top;
+}
+.filebrowser .status .title{
+	white-space:nowrap;
+}
+.filebrowser .status .name{
+	white-space:nowrap;
+}
+.filebrowser .status .info{
+	background-color:#00ff00;
+}
+.filebrowser .rubberband{
+	background-color:red;
+	opacity:0.3;
+	border:1px solid black;
+}
