@@ -1,9 +1,7 @@
 # raspberry-pi
 www.ws-os.com
 
-node-authenticate-pam
-
-apt-get install libpam0g-dev
+node-authenticate-pam:   apt-get install libpam0g-dev
 
 
 node server
