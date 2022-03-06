@@ -4,7 +4,7 @@ module.exports = function list(web){
     this.making = function(session){
         const app = session.app
         return new Promise(async function(resolve, reject){
-            let icons = path.join(path.sep+'etc','ws-os',session.user.id,'jsons','icons.json')
+            let icons = path.join('/home',session.user.id,'.ws-os','jsons','icons.json')
             icons = web.sys.reads.json(icons)
             let length = Object.keys(icons.list).length
             icons = listing_r(0,length,icons,{length:0})
