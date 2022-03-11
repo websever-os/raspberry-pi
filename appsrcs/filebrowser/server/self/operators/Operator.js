@@ -120,7 +120,7 @@ module.exports = function Operator(web){
 			session.app.data.info = {path:dst,list:deletedList}
 			session.app.filebrowser.self.executes.delete.onClient(session)
 			
-			session.app.data.info = {msg:path.join(dst,deletedList[0]) + ' and etc are delete.',time:state.mtimeMs}
+			session.app.data.info = {msg:path.join(dst,deletedList[0]) + ' and etc are deleted.',time:state.mtimeMs}
 			session.app.gui.msg.executes.sending(session)
 		}
 	}
