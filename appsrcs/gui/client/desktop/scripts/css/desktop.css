@@ -214,7 +214,7 @@ div.icon div.title{
 	top:0;
 	z-index:2147483646;
 }
-#msgWindow body{
+#msgWindow .win-body{
 	width:100%;
 	height:100%;
 }
