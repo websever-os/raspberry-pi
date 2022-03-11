@@ -219,7 +219,10 @@ div.icon div.title{
 	height:100%;
 }
 #msgWindow table{
-	width:100%;
+	width:400px;
+}
+#msgWindow tr{
+	width:400px;
 }
 #msgWindow th.x{
 	width:20px;
