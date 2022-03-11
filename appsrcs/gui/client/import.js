@@ -2,7 +2,6 @@ Background = web.app.gui.src.background.Background
 BackgroundEvent = web.app.gui.src.background.events.Event
 BackgroundExecutor = web.app.gui.src.background.executors.Executor
 BackgroundInitExecutor = web.app.gui.src.background.executors.Initialization
-
 Bar = web.app.gui.src.bar.Bar
 BarController = web.app.gui.src.bar.controllers.Controller
 BarClickController = web.app.gui.src.bar.controllers.Click
@@ -55,3 +54,11 @@ WindowJSON = web.app.gui.src.window.models.JSON
 WindowNode = web.app.gui.src.window.models.Node
 WindowOperator = web.app.gui.src.window.operators.Operator
 WindowView = web.app.gui.src.window.views.View
+
+Msg = web.app.gui.src.msg.MSG
+MsgController = web.app.gui.src.msg.controllers.Controller
+MsgEvent = web.app.gui.src.msg.events.Event
+MsgExecutor = web.app.gui.src.msg.executes.Executor
+MsgInitializationExecutor = web.app.gui.src.msg.executes.Initialization
+MsgOperator = web.app.gui.src.msg.operators.Operator
+MsgView = web.app.gui.src.msg.views.View

@@ -10,7 +10,14 @@ module.exports = function View(web){
         var view = app[app.name].view
 
         const viewJSON = app[app.name].viewsJSON[view.name]
-        view.data = frame(viewJSON.frame,session)
+        if(viewJSON !== undefined)
+            view.data = frame(viewJSON.frame,session)
+        else{
+            console.log(view.name)
+            app.status = w[33]
+            app.msg = m[lang][404][8]
+        }
+
         if(app.status == w[30]){
             view.data = view.data.replace('{{ title }}',viewJSON.title)
             view.data = view.data.replace('{{ css }}',app_css_r(0,"",viewJSON.css,session))

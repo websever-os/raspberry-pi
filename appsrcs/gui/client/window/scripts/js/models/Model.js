@@ -13,7 +13,6 @@ web.app.gui.src.window.models.Model = function(){
         minButton:true,
         head:true,
         resize:true,
-        coordinate:true,
         enum:true,
         iframe:false
     }

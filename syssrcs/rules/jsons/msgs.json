@@ -11,7 +11,8 @@
             "4":"HTML for the frame in the app does not exists.",
             "5":" does not exists.",
             "6":"/server/App.js in App does not exists.",
-            "7":"Not found static file"
+            "7":"Not found static file",
+            "8":"View's name has a problem."
         },
         "500":{
             "0":"Internal Server Error"

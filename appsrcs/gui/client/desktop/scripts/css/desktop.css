@@ -29,14 +29,14 @@ body{
 #menubar img{
 	height:/* taskbarWidth */px;
 }
-#msg{
+#msgButton{
 	position:absolute;
 	right:0;
 }
-#msg img:hover{
+#msgButton img:hover{
 	opacity:0.4;
 }
-#msg img{
+#msgButton img{
 	height:/* taskbarWidth */px;
 }
 #icontable{
@@ -83,10 +83,6 @@ div.icon div.title{
 	min-height: /* windowOuterMin-height */px;
     position: absolute;
     border: /* windowOuterBorderWidth */px solid /* windowOuterBorderColor */;
-}
-.enum{
-	left: /* windowOuterLeft */px;
-    top: /* windowOuterTop */px;
 }
 .win-head{
     background-color: /* windowHeadBackground-color */;
@@ -212,9 +208,51 @@ div.icon div.title{
 .bar:hover{
     opacity:0.7;
 }
+#msgWindow{
+	position: absolute;
+	right:0;
+	top:0;
+	z-index:2147483646;
+}
+#msgWindow body{
+	width:100%;
+	height:100%;
+}
+#msgWindow table{
+	width:100%;
+}
+#msgWindow th.x{
+	width:20px;
+	background-color: red;
+}
+#msgWindow td.x{
+	width:20px;
+	background-color: red;
+	text-align: center;
+}
+#msgWindow th.x:hover td.x:hover{
+	opacity: 0.5;
+}
+#msgWindow tr:nth-child(even){
+	background-color:lightGray;
+}
 
 /*
-
+#msgWindow .msg{
+	width:100%;
+}
+#msgWindow .msg-x{
+	position:absolute;
+	right:20px;
+}
+#msgWindow .msg-x>img{
+	width:15px;
+	right:15px;
+}
+#msgWindow .time{
+	position:absolute;
+	right:35px;
+}
 
 
 #menubar_context{

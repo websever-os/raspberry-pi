@@ -22,6 +22,8 @@ module.exports = function Operator(web){
 				type = 'directory'
 			session.app.data.info = {path:info.dst,srcList:[info.srcName],dstList:[[info.dstName,state.mtimeMs,type,state.size]]}
 			session.app.filebrowser.self.executes.rename.onClient(session)
+			session.app.data.info = {msg:info.srcName + ' is renamed to ' + info.dstName + '.',time:state.mtimeMs}
+			session.app.gui.msg.executes.sending(session)
 		}
 	}
 	this.copy = function(session){
@@ -50,6 +52,8 @@ module.exports = function Operator(web){
 					if(copiedList.length != 0){
 						session.app.data.info = {path:dst,list:copiedList}
 						session.app.filebrowser.self.executes.copy.onClient(session)
+						session.app.data.info = {msg:path.join(dst,copiedList[0][0]) + ' is copied.',time:state.mtimeMs}
+						session.app.gui.msg.executes.sending(session)
 						copiedList.pop()
 					}
 				})
@@ -88,6 +92,8 @@ module.exports = function Operator(web){
 							session.app.filebrowser.self.executes.cut.onClient(session)
 							session.app.data.info = {mode:'src',path:src,list:srcList}
 							session.app.filebrowser.self.executes.cut.onClient(session)
+							session.app.data.info = {msg:path.join(dst,srcList[0]) + ' is moved to ' + path.join(dst,dstList[0][0]) + '.',time:state.mtimeMs}
+							session.app.gui.msg.executes.sending(session)
 							srcList.pop()
 							dstList.pop()
 						}
@@ -113,25 +119,42 @@ module.exports = function Operator(web){
 			Promise.all(deleteItems)
 			session.app.data.info = {path:dst,list:deletedList}
 			session.app.filebrowser.self.executes.delete.onClient(session)
+			
+			session.app.data.info = {msg:path.join(dst,deletedList[0]) + ' and etc are delete.',time:state.mtimeMs}
+			session.app.gui.msg.executes.sending(session)
 		}
 	}
     this.newDirectory = function(session){
         if(isFiltered(session)){
             var dst = session.app.data.info.dst
             var name = "New Directory"
-            name = nameTag_R(dst,name,1,'','')
+            name = nameTagForDirctory_R(dst,name,1,'','')
 			fs.mkdirSync(path.join(dst,name))
 			var state = fs.lstatSync(path.join(dst,name))
 			session.app.data.info = {path:dst,list:[[name,state.mtimeMs,'directory',state.size]]}
 			session.app.filebrowser.self.executes.newDirectory.onClient(session)
+			session.app.data.info = {msg:'New directory in ' + dst + '.',time:state.mtimeMs}
+			session.app.gui.msg.executes.sending(session)
         }
     }
-    const nameTag_R = function(dir, name, cnt, numTag, fullTag){
+	const nameTagForDirctory_R = function(dir, name, cnt, tagName, fullTag){
         const fullpath = path.join(dir,name + fullTag)
 		if(!fs.existsSync(fullpath)){
 			return name+fullTag
 		}else{
-			return nameTag_R(dir,name,++cnt,numTag,numTag + "("+cnt+")")
+			return nameTagForDirctory_R(dir,name,++cnt,tagName,tagName + "("+cnt+")")
+		}		
+	}
+    const nameTag_R = function(dir, name, cnt, tagName, fullTag){
+        let names = name.split('.')
+		let ext = names[names.length-1]
+		let regex = new RegExp('.'+ext+'$')
+		let namehead = name.replace(regex,'')
+		const fullpath = path.join(dir,namehead + fullTag + '.' +ext)
+		if(!fs.existsSync(fullpath)){
+			return namehead + fullTag + '.' +ext
+		}else{
+			return nameTag_R(dir,name,++cnt,tagName,tagName + "("+cnt+")")
 		}			
 	}
 }

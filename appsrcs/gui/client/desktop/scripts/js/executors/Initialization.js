@@ -8,6 +8,7 @@ web.app.gui.src.desktop.executors.Initialization = function(web){
     this.view = async function(){
         web.app.gui.background.executes.init.task()
         await web.app.gui.icontable.executes.init.task()
+        web.app.gui.msg.executes.init.task()
         web.app.gui.window.operates.recovery()
         web.sys.adjusts.effect.ofProcess.toRemove()
     }

@@ -1,4 +1,4 @@
-module.exports = function App(web){
+module.exports = function Desktop(web){
     let Customizer = require('./customizers/Customizer')
     let Executor = require('./executors/Executor')
     let Operator = require('./operators/Operator')
