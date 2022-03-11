@@ -209,7 +209,7 @@ div.icon div.title{
     opacity:0.7;
 }
 #msgWindow{
-	position: absolute;
+	position:absolute;
 	right:0;
 	top:0;
 	z-index:2147483646;
@@ -220,21 +220,19 @@ div.icon div.title{
 }
 #msgWindow table{
 	width:400px;
-}
-#msgWindow tr{
-	width:400px;
+	word-break: break-all;
 }
 #msgWindow th.x{
 	width:20px;
-	background-color: red;
+	background-color:red;
 }
 #msgWindow td.x{
 	width:20px;
-	background-color: red;
-	text-align: center;
+	background-color:red;
+	text-align:center;
 }
 #msgWindow th.x:hover td.x:hover{
-	opacity: 0.5;
+	opacity:0.5;
 }
 #msgWindow tr:nth-child(even){
 	background-color:lightGray;
