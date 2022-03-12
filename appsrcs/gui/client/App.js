@@ -8,7 +8,7 @@ function App(web){
     this.barzone = null
     this.desktop = new Desktop(web)
     this.icontable = new Icontable(web)
-    this.menubar = null
+    this.menubar = new Menubar(web)
     this.msg = new Msg(web)
     this.taskbar = null
     this.window = new Window(web)

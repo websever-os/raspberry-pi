@@ -237,7 +237,25 @@ div.icon div.title{
 #msgWindow tr:nth-child(even){
 	background-color:lightGray;
 }
-
+#desktopMenu{
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:2147483646;
+	width: -moz-fit-content;
+  	width: fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	background-color: white;
+}
+#desktopMenu div{
+	font-size: 20px;
+	padding:10px;
+}
+#desktopMenu div:hover{
+	background-color: gray;
+	opacity: 0.8;
+}
 /*
 #msgWindow .msg{
 	width:100%;
